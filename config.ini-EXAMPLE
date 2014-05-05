@@ -26,10 +26,11 @@ camera_rotation = 0                 ; degrees to rotate the photo by
 
 # any other options you might want to pass to raspistill
 # https://github.com/raspberrypi/userland/tree/master/host_applications/linux/apps/raspicam#camera-control-options
-# Note the -t 0 allows the RPi to tke a picture immediately, but this impacts quality. 5s is the default
+# Note the -t 100 (0.1sec) allows the RPi to tke a picture immediately, but this impacts quality. 5s is the default
+# do not use -t 0 as that freezes
+# -q 5 corresponds to jpeg quality 75
 # technically rotation should be here, but I found it useful enough to split it into an option by itself above.
-cam_options = -t 5 -q 65
-
+cam_options = -t 100 -q 5
 
 
 [selectivescan]
